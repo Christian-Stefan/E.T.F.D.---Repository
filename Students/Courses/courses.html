@@ -1,0 +1,128 @@
+<div id="message-box" style="font-family: 'Caveat', cursive; font-size: 1em; margin-top: 20px; border: 2px solid red; padding: 10px; border-radius: 5px; background-color: rgba(255, 255, 255, 0.5); text-align: left; line-height: 1.6; color: #333;">
+<p style="margin: 0;">The Energy Technology and Fluid Dynamics group facilitates various courses for the BSc and MSc in Mechanical Engineering and Sustainable Energy Technology from basic principles to applications, including those listed below.
+<a style="color: red; text-decoration: none;" href="https://tue.osiris-student.nl/onderwijscatalogus/" target="_blank" rel="noopener">https://tue.osiris-student.nl/onderwijscatalogus/</a></p>
+
+</div>
+<h3 style="font-family: 'Times New Roman', cursive; font-size: 1em;"></h3>
+<h3 style="font-family: 'Caveat', cursive; font-size: 1.2em; display: flex; justify-content: center; gap: 20px; width: 100%; padding: 0 20px; box-sizing: border-box; flex-wrap: wrap;"><a class="btns ghost primary bsc-button">BSc COURSES</a>
+<a class="btns ghost primary msc-button">MSc COURSES</a></h3>
+<style>
+    /* General button styling */<br />
+    .btns.ghost.primary {<br />
+        padding: 12px 24px;<br />
+        font-size: 1.2em;<br />
+        font-weight: bold;<br />
+        text-transform: uppercase;<br />
+        border: none;<br />
+        cursor: pointer;<br />
+        transition: background 0.4s ease, transform 0.2s ease;<br />
+        text-align: center;<br />
+        color: white;<br />
+        border-radius: 8px;<br />
+    }<br />
+    /* BSc Courses Button - Gradient */<br />
+    .bsc-button {<br />
+        background: linear-gradient(135deg, #ADA996, #F2F2F2,#DBDBDB,#EAEAEA);<br />
+    }<br />
+    /* MSc Courses Button - Gradient */<br />
+    .msc-button {<br />
+        background: linear-gradient(135deg, #dd3e54, #6be585);<br />
+    }<br />
+    /* Hover effect */<br />
+    .btns.ghost.primary:hover {<br />
+        transform: scale(1.05);<br />
+        filter: brightness(1.2);<br />
+    }<br />
+</style>
+<div id="bsc-course-list" style="display: none; font-family: 'Caveat', cursive; font-size: 1em; margin-top: 10px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+
+<strong>Detailing, realization and RPC test (4WSU00)</strong>, 5 EC
+Contact person: prof.dr.ir. H.C. de Lange
+
+<strong>Dynamics of energy systems (4EC10)</strong>, 5 EC
+Contact person: dr.ir. M.F.M. Speetjens
+
+<strong>Energy storage and transport (4CBLA30)</strong>, 5 EC
+Contact person: dr.ir. C.V. Verhoosel
+
+<strong>Solar heat system (4CBLB00)</strong>, 5 EC
+Contact person: dr.ir. A.J.H. Frijns
+
+<strong>Ideation and preliminary design (4WEU00)</strong>, 5 EC
+Contact person: prof.dr.ir. H.C. de Lange
+
+<strong>Thermodynamics (4EB00)</strong>, 5 EC
+Contact person: dr.ir. M.F.M. Speetjens
+
+<strong>User testing, evaluation and improvement (4WAU00)</strong>, 5 EC
+Contact person: prof.dr.ir. H.C. de Lange
+
+<strong>Heat &amp; Flow (4PB00)</strong>, 5 EC
+Contact person on heat: dr. P. Grassia
+
+<strong>Introduction transport phenomena (4RA10)</strong>, 5 EC
+Contact person: dr. Ir. W.-B. Bartels
+
+</div>
+<div id="msc-course-list" style="display: none; font-family: 'Caveat', cursive; font-size: 1em; margin-top: 10px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+
+<strong>Advanced engineering mathematics (4BM00)</strong>, 5 EC
+Contact person: dr. M.R.A. Abdelmalik, MSc
+
+<strong>Gasdynamics (4EM10)</strong>, 5 EC
+Contact person: prof.dr.ir. D.M.J. Smeulders
+
+<strong>Heat and flow in microsystems (4EM40)</strong>, 5 EC
+Contact person: dr.ir. A.J.H. Frijns
+
+<strong>Microscale modeling of heat storage materials (4SE20ONL)</strong>, 5 EC
+Contact person: dr.ir. A.J.H. Frijns
+
+<strong>Modelling high-tech systems with thermo-mechanical effects (4EM90)</strong>, 5 EC
+Contact person: dr.ir. M.F.M. Speetjens
+
+<strong>Monte Carlo Simulations for Energy Applications (4EM80)</strong>, 5 EC
+Contact person: dr. A. Luna Triguero
+
+<strong>Scientific computing for Mechanical Engineering (4EM30)</strong>, 5 EC
+Contact person: dr.ir. C.V. Verhoosel
+
+<strong>Sustainable Energy Sources (4EM70)</strong>, 5 EC
+Contact person: dr.ir. C.C.M. Rindt
+
+<strong>Thermal energy storage (4EM50), 2.5 EC</strong> and <strong>Thermal energy storage and demand (4SE30ONL)</strong>, 5 EC
+Contact person: prof.dr. H.A. Zondag
+
+<strong>Energy Geoscience (4BM50)</strong>, 2.5 EC
+Contact person: dr. M. Rücker
+
+</div>
+<script>
+    function toggleCourses(courseListId) {
+        // Define background images
+        const defaultBg = "none"; // No background when deselected
+        const bscBg = "url('https://www.energy-tue.nl/wp-content/uploads/2025/03/BachelorTurbine.jpeg')"; // BSc background
+        const mscBg = "url('https://www.energy-tue.nl/wp-content/uploads/2025/03/MasterTurbine3Updated.jpeg')"; // MSc background
+        // Get course lists
+        const courseList = document.getElementById(courseListId);
+        const isCurrentlyVisible = courseList.style.display === 'block';
+        // Hide both lists before toggling
+        document.getElementById('bsc-course-list').style.display = 'none';
+        document.getElementById('msc-course-list').style.display = 'none';
+        // Toggle only the selected list
+        courseList.style.display = isCurrentlyVisible ? 'none' : 'block';
+        // Apply full-screen background with proper offset
+        document.body.style.backgroundImage = isCurrentlyVisible ? defaultBg : 
+            (courseListId === 'bsc-course-list' ? bscBg : mscBg);
+        document.body.style.backgroundSize = "cover"; // Ensure full-screen coverage
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.transition = "background 0.5s ease-in-out";
+        // Push the background down to prevent overlap with the header
+        document.body.style.backgroundPosition = "center top 100px"; // Adjust top padding
+    }
+</script>
+<div id="message-box" style="font-family: 'Caveat', cursive; font-size: 1em; margin-top: 20px; border: 2px solid red; padding: 10px; border-radius: 5px; background-color: rgba(255, 255, 255, 0.5); text-align: left; line-height: 1.6; color: #333;">
+<p style="margin: 0;">The full list of courses offered by our lecturers, detailed descriptions, and registration can be found here:
+<a style="color: red; text-decoration: none;" href="https://tue.osiris-student.nl/onderwijscatalogus/" target="_blank" rel="noopener">https://tue.osiris-student.nl/onderwijscatalogus/</a></p>
+
+</div>
