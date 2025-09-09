@@ -1,0 +1,5 @@
+![](https://upload.wikimedia.org/wikipedia/commons/6/67/Eindhoven_University_of_Technology_logo_new.svg)
+
+The research group Energy Technology and Fluid Dynamics consists of some 70 persons comprising faculty, support staff and PhD students. We are part of the Department of Mechanical Engineering of Eindhoven University of Technology in the Netherlands. The mission our group is to advance heat & flow technologies for energy and high-tech applications. This mission encompasses research and development of new methods and tools (science); improving applied systems (technology); exchanging knowledge with our partners in society (valorization) and teaching and inspiring the future generation of engineers (education).
+
+The scientific and technological challenges in the areas of energy technology and high-tech systems are huge. In order to deal with the challenges, both fundamental and application-oriented developments are necessary. If there is one single discipline where you really can make a difference as an engineer or scientist, it is in the field of energy technology & fluid dynamics
