@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Triangle</title>
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.triangle-wrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+.triangle-wrapper img {
+  width: 100%;
+  display: block;
+}
+.triangle-point {
+  position: absolute;
+  cursor: pointer;
+}
+.glow-effect {
+  position: absolute;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: rgba(102, 153, 255, 0.4);
+  box-shadow: 0 0 12px rgba(102, 153, 255, 0.6);
+  animation: pulseGlow 1.5s infinite;
+  pointer-events: none;
+}
+@keyframes pulseGlow {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+.info-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  display: none;
+  font-size: 0.95rem;
+  text-align: left;
+  line-height: 1.6;
+}
+.info-container h3 {
+  margin-top: 0;
+}
+</style>
+</head>
+<body>
+<div class="triangle-wrapper">
+  <img src="https://www.energy-tue.nl/wp-content/uploads/2025/04/Picture1.png" alt="Triangle">
+  <div class="triangle-point" style="top:2%;left:38%;width:24%;height:28%;" onclick="selectRegion('top', topContent)"></div>
+  <div class="triangle-point" style="bottom:6%;left:5%;width:35%;height:35%;" onclick="selectRegion('left', leftContent)"></div>
+  <div class="triangle-point" style="bottom:6%;right:5%;width:35%;height:35%;" onclick="selectRegion('right', rightContent)"></div>
+  <div class="triangle-point" style="bottom:34%;left:35.5%;width:14%;height:34%;" onclick="selectRegion('interpore', interporeContent)"></div>
+  <div class="triangle-point" style="bottom:34%;left:50.5%;width:14%;height:34%;" onclick="selectRegion('inpath', inpathContent)"></div>
+  <div id="glow" class="glow-effect" style="display: none;"></div>
+</div>
+<div id="infoBox" class="info-container"></div>
+<script>
+const infoBox = document.getElementById("infoBox")
+const glow = document.getElementById("glow")
+const positions = {
+  top: {top: "10%", left: "47%"},
+  left: {top: "65%", left: "20%"},
+  right: {top: "65%", left: "70%"},
+  interpore: {top: "54%", left: "42%"},
+  inpath: {top: "54%", left: "58%"}
+}
+const topContent = `
+<h3>Graduate School on Engineering Mechanics</h3>
+<p>The Graduate School on Engineering Mechanics has been established with the aim to strengthen research and education in the field of engineering mechanics in The Netherlands. The EM Graduate School intends to be a platform that, on the basis of a number of selected research themes, fosters long-term knowledge and skills in the engineering mechanics field. Although operating primarily at a national level, it intends to stimulate international collaborative research projects within the research themes.</p>
+<p><strong>Objectives include:</strong></p>
+<ul>
+<li>Training of PhD-students as independent researchers</li>
+<li>Coordination and infrastructure enhancement</li>
+<li>Advancing selected themes relevant internationally and locally</li>
+<li>International visibility and scientific position</li>
+<li>Maintaining standards in undergraduate education</li>
+</ul>
+<p>📘 <a href='https://engineeringmechanics.nl/courses/' target='_blank'>Course overview and registration</a><br>📩 Contact: <a href='mailto:Engineering.mechanics@tue.nl'>Engineering.mechanics@tue.nl</a></p>
+`
+const leftContent = `
+<h3>4TU - Collaborative Teaching Initiatives</h3>
+<p><strong>4TU.Energy</strong> allows students from the 4TU alliance (TU Eindhoven, TU Delft, University of Twente, Wageningen University) to attend energy-related courses across all partners.</p>
+<p>📘 <a href='https://www.4tu.nl/energy/education/' target='_blank'>4TU Energy Course Map</a><br>📩 Contact: dr. Sha Lou</p>
+`
+const rightContent = `
+<h3>EuroTeQ</h3>
+<p><strong>EuroTeQ</strong> is a pioneering alliance of seven top universities and two business schools across Europe, transforming engineering education.</p>
+<ul>
+<li>📚 115,000+ students in research-led teaching</li>
+<li>💡 EuroTeQ Collider & EuroTeQaThon encourage innovation</li>
+</ul>
+<p>📘 <a href='https://euroteq.eurotech-universities.eu/initiatives/building-a-european-campus/course-catalogue/' target='_blank'>EuroTeQ Course Catalogue</a><br>📩 Contact: Meagin van der Westhuizen<br><a href='mailto:euroteq-courses@tue.nl'>euroteq-courses@tue.nl</a></p>
+`
+const interporeContent = `
+<h3>InterPore Academy</h3>
+<p>The InterPore Academy of Porous Media was established in 2020. Its mission is to advance and share knowledge for understanding and modeling porous media in natural, biomedical and industrial systems.</p>
+<p>💡 We support education and research via:</p>
+<ul>
+<li>Courses</li>
+<li>Webinars</li>
+<li>Thematic Workshops</li>
+<li>Young Academy activities</li>
+</ul>
+<p>📘 <a href='https://www.interpore.org/short-courses/' target='_blank'>Course Overview and Registration</a><br>📩 Contact: dr. M. Rücker</p>
+`
+const inpathContent = `
+<h3>InPath-TES</h3>
+<p>The ETFD group is a partner in InPath-TES – a global PhD programme on thermal energy storage offering 14 online courses made up of flexible, independent modules.</p>
+<ul>
+<li>Students can take entire courses or individual lessons.</li>
+<li>Lessons cover specialized areas in TES.</li>
+</ul>
+<p>📘 <a href='https://www.inpathtes.eu' target='_blank'>More information on the InPath-TES website</a><br>📩 Contacts: dr.ir. C.C.M Rindt / dr.ir. A.j.H. Frijns</p>
+`
+function selectRegion(region, content) {
+  const pos = positions[region]
+  glow.style.display = "block"
+  glow.style.top = pos.top
+  glow.style.left = pos.left
+  glow.style.transform = "translate(-50%, -50%)"
+  infoBox.innerHTML = content
+  infoBox.style.display = "block"
+}
+</script>
+</body>
+</html>
